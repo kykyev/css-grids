@@ -1,0 +1,26 @@
+
+@mixin respond_to ($bp_spec, $bp_name) {
+    @each $bp in $bp_spec {
+        @if nth($bp, 1) == $bp_name {
+             @media only screen and ( min-width: #{nth($bp, 2)} ) { @content; }
+        }
+    }
+}
+
+
+@mixin respond_to_interval ($bp_spec, $bp_beg, $bp_end) {
+    
+    $from: "";
+    $to: "";
+
+    @each $bp in $bp_spec {
+        @if nth($bp, 1) == $bp_beg {
+             $from: nth($bp, 2);
+        }
+        @if nth($bp, 1) == $bp_end {
+             $to: nth($bp, 2) - 1;
+        }
+    }
+    
+    @media only screen and ( min-width: #{$from} ) and ( max-width: #{$to} ) { @content; }
+}

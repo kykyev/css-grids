@@ -1,0 +1,11 @@
+@import "../scss/respond-to";
+
+$bp_spec: (iphone 320px) (tablet 640px) (laptop 920px);
+
+@include respond_to_interval($bp_spec, iphone, laptop) {
+    padding: 0;
+}
+
+@include respond_to_interval($bp_spec, iphone, tablet) {
+    padding: 0;
+}

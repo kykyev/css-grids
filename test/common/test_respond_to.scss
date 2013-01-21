@@ -1,0 +1,11 @@
+@import "../scss/respond-to";
+
+$bp_spec: (iphone 320px) (tablet 640px) (laptop 920px);
+
+@include respond_to($bp_spec, iphone) {
+    padding: 0;
+}
+
+@include respond_to($bp_spec, tablet) {
+    padding: 0;
+}
