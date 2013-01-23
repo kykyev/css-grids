@@ -5,19 +5,17 @@
 
 @mixin simple_grid($ns:"", $gutters:5px) {
     
-    @if $ns == "" {
-        .grid:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        .col-centered {
-            float: none;
-            margin: 0 auto;
-        }
+    .#{$ns}grid:after {
+        content: "";
+        display: table;
+        clear: both;
     }
-    
+
+    .#{$ns}col-centered {
+        float: none;
+        margin: 0 auto;
+    }
+        
     [class^='#{$ns}col-'] {
         float: left;
         /* gutters */
