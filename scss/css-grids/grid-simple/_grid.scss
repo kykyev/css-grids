@@ -16,7 +16,7 @@
         margin: 0 auto;
     }
         
-    [class^='#{$ns}col-'] {
+    [class*='#{$ns}col-'] {
         float: left;
         /* gutters */
         padding: $gutters;
