@@ -1,0 +1,19 @@
+@import "css-grids/grid-yui3/main";
+
+@include yui_grid();
+
+
+.post {
+    padding: 7px 3px;
+}
+
+[class*='yui3-u'] {
+
+    &:nth-child(2n+1) {
+        background: rgb(20, 100, 250);
+    }
+
+    &:nth-child(2n+2) {
+        background: rgb(250, 100, 20);
+    }
+}

@@ -3,14 +3,23 @@
  *
  */
 
+@import "compass/css3/box-sizing";
+
+
 @mixin yui_grid($ns:"") {
-    
-    /* !!! this does not work in google chrome */
-    .#{$ns}yui3-g {
-        letter-spacing: -0.31em; /* webkit: collapse white-space between units */
-        *letter-spacing: normal; /* reset IE < 8 */
-        word-spacing: -0.43em; /* IE < 8 && gecko: collapse white-space between units */
+
+    *, *:after, *:before {
+        @include box-sizing(border-box);
     }
+    
+    /* !!! this does not work in Chrome */
+    /* You *have to* collapse whitespace *in HTML* */
+    
+    /*.#{$ns}yui3-g {
+        letter-spacing: -0.31em; // webkit: collapse white-space between units
+        *letter-spacing: normal; // reset IE < 8
+        word-spacing: -0.43em;   // IE < 8 && gecko: collapse white-space between units
+    }*/
 
     .#{$ns}yui3-u,
     .#{$ns}yui3-u-1,
