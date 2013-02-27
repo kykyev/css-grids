@@ -1,0 +1,15 @@
+@import "css-grids/common/respond-to";
+
+$bp_spec: (iphone 320px) (tablet 640px) (laptop 920px);
+
+@include respond_to_upto($bp_spec, iphone) {
+    padding: 0;
+}
+
+@include respond_to_upto($bp_spec, tablet) {
+    padding: 1;
+}
+
+@include respond_to_upto($bp_spec, laptop) {
+    padding: 2;
+}
