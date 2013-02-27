@@ -18,7 +18,7 @@
              $from: nth($bp, 2);
         }
         @if nth($bp, 1) == $bp_end {
-             $to: nth($bp, 2) - 1;
+             $to: nth($bp, 2);
         }
     }
     
@@ -29,7 +29,7 @@
 @mixin respond_to_upto ($bp_spec, $bp_name) {
     @each $bp in $bp_spec {
         @if nth($bp, 1) == $bp_name {
-             @media only screen and ( max-width: #{nth($bp, 2) - 1} ) { @content; }
+             @media only screen and ( max-width: #{nth($bp, 2)} ) { @content; }
         }
     }
 }
