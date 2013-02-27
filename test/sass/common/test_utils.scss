@@ -1,0 +1,7 @@
+@import "css-grids/common/utils";
+
+$hash: (aaa 10px) (bbb 20px) (ccc 30px);
+
+.test {
+    padding: hash($hash, bbb);
+}

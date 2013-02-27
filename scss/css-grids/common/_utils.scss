@@ -1,0 +1,12 @@
+
+@function hash($pairs, $key) {
+    $val: undefined;
+
+    @each $key_val in $pairs {
+        @if nth($key_val, 1) == $key {
+             $val: nth($key_val, 2);
+        }
+    }
+
+    @return $val;
+}
