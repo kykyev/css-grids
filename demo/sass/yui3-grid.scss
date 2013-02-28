@@ -1,11 +1,7 @@
 @import "css-grids/grid-yui3/main";
 
-@include yui_grid();
+@include yui_grid($gutters: 7px 3px);
 
-
-.post {
-    padding: 7px 3px;
-}
 
 [class*='yui3-u'] {
 

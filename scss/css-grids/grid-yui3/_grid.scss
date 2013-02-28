@@ -6,7 +6,7 @@
 @import "compass/css3/box-sizing";
 
 
-@mixin yui_grid($ns:"") {
+@mixin yui_grid($ns:"", $gutters: 0px) {
 
     *, *:after, *:before {
         @include box-sizing(border-box);
@@ -55,6 +55,7 @@
         letter-spacing: normal;
         word-spacing: normal;
         vertical-align: top;
+        padding: $gutters;
     }
 
     .#{$ns}yui3-u-1 {
