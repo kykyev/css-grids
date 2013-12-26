@@ -13,40 +13,23 @@
     <link rel="stylesheet" href="/stylesheets/yui-grid.css">
 </head>
 <body>
-  <div class="grid-yui">
+  <div class="grid-yui"></div>
+
+  <script type="text/x-handlebars-template" id="template">
     <div class="grid-yui__item width-1 width-palm-1-2 width-tablet-1-3">
       <div class="post" data-lorem="s7"></div>
-    </div><!--
- --><div class="grid-yui__item width-1 width-palm-1-2 width-tablet-1-3">
-      <div class="post" data-lorem="s7"></div>
-    </div><!--
- --><div class="grid-yui__item width-1 width-palm-1-2 width-tablet-1-3">
-      <div class="post" data-lorem="s7"></div>
-    </div><!--
- --><div class="grid-yui__item width-1 width-palm-1-2 width-tablet-1-3">
-      <div class="post" data-lorem="s7"></div>
-    </div><!--
- --><div class="grid-yui__item width-1 width-palm-1-2 width-tablet-1-3">
-      <div class="post" data-lorem="s7"></div>
-    </div><!--
- --><div class="grid-yui__item width-1 width-palm-1-2 width-tablet-1-3">
-      <div class="post" data-lorem="s7"></div>
-    </div><!--
- --><div class="grid-yui__item width-1 width-palm-1-2 width-tablet-1-3">
-      <div class="post" data-lorem="s7"></div>
-    </div><!--
- --><div class="grid-yui__item width-1 width-palm-1-2 width-tablet-1-3">
-      <div class="post" data-lorem="s7"></div>
-    </div><!--
- --><div class="grid-yui__item width-1 width-palm-1-2 width-tablet-1-3">
-      <div class="post" data-lorem="s7"></div>
     </div>
-  </div>
-
+  </script>
+  <!-- Space collapsed by the `trim` function in Javascript. -->
+  
   <script src="/javascript/jquery.js"></script>
   <script src="/javascript/lorem.js"></script>
+  <script src="/javascript/handlebars.js"></script>
+  
   <script>
     (function($) {
+        var template = Handlebars.compile($("#template").html());
+        $('.grid-yui').html(Array(10).join(template().trim()));
         $('body').ipsum();
     }(jQuery));
   </script>
