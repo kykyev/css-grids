@@ -1,0 +1,32 @@
+@import "compass/css3/box-sizing";
+@import "css-grids/grid-yui/main";
+@import "css-grids/width";
+
+$bp_spec: (palm 600px) (tablet 840px);
+
+
+*, *:after, *:before {
+    @include box-sizing(border-box);
+}
+
+@include css-grids-yui-2($gutters: 2px 2px);
+@include css-grids-widths();
+
+@include respond_to($bp_spec, palm) {
+    @include css-grids-widths(palm);
+}
+
+@include respond_to($bp_spec, tablet) {
+    @include css-grids-widths(tablet);
+}
+
+.grid-yui__item {
+
+    &:nth-child(2n+1) .post {
+        background: rgba(20, 100, 250, 0.3);
+    }
+
+    &:nth-child(2n+2) .post {
+        background: rgba(100, 250, 20, 0.3);
+    }
+}

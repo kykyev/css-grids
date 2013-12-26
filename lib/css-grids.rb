@@ -7,6 +7,6 @@ Compass::Frameworks.register("css-grids",
 )
 
 module CssGrids
-  VERSION = "0.0.0"
-  DATE = "2013-01-21"
+  VERSION = "0.0.1"
+  DATE = "2013-12-20"
 end

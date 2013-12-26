@@ -1,0 +1,65 @@
+
+/**
+ *
+ *   Make sure set box-sizing=border-box to everything.
+ *
+ */
+
+
+ /**
+ *
+ *
+    There is no reliable way to collapse space between inline-block
+    elements using only CSS. You have to do this in your HTML markup.
+
+    E.g.:
+
+        <div class="grid-yui">
+
+           <div class="grid-yui__item width-1-3">
+               <p>One third grid</p>
+           </div><!--
+
+        --><div class="grid-yui__item width-2-3">
+               <p>Two thirds grid</p>
+           </div><!--
+
+        --><div class="grid-yui__item width-1-4">
+               <p>One quarter grid</p>
+           </div>
+
+        </div>
+ *
+ */
+
+
+@mixin css-grids-yui ($gutters: 0em) {
+
+     .grid-yui {
+        // currently nothing
+    }
+
+    .grid-yui__item {
+        display: inline-block;
+        zoom: 1; *display: inline; /* IE < 8: fake inline-block */
+        vertical-align: top;
+        padding: $gutters;
+    }
+
+}
+
+@mixin css-grids-yui-2 ($gutters: 0em, $restored-font-size: 16px) {
+
+     .grid-yui {
+        font-size: 0;
+    }
+
+    .grid-yui__item {
+        display: inline-block;
+        zoom: 1; *display: inline; /* IE < 8: fake inline-block */
+        vertical-align: top;
+        padding: $gutters;
+        font-size: $restored-font-size;
+    }
+
+}
